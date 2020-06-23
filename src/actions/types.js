@@ -1,0 +1,3 @@
+export const FETCH_RENTALS = 'FETCH_RENTALS';
+export const FETCH_RENTAL_BY_ID_Success='FETCH_RENTAL_BY_ID_Success';
+export const FETCH_RENTAL_BY_ID_INIT='FETCH_RENTAL_BY_ID_INIT';

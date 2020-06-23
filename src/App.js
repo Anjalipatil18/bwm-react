@@ -1,19 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {BrowserRouter,Route,Redirect} from 'react-router-dom';
+// import logo from './logo.svg';
+
+import {Provider} from 'react-redux';
+
+import {Header} from './shared/Header';
+import RentalListing from './component/rental/rental-listing/RentalListing';
+import RentalDetail from './component/rental/rental-detail/RentalDetail'
+
+
 import './App.css';
 
+const store=require('./reducers').init();
+
 class App extends Component {
+//   constructor(){
+//     super();
+
+//     this.state={
+//         isRentalList:true
+//     }
+// }
+
+// navigate(){
+//   this.setState({
+//     isRentalList:!this.state.isRentalList
+//   })
+// }
+
   render() {
     return (
+      <Provider store={store}>
+      <BrowserRouter>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Header />
+        {/* <button onClick={()=>{ this.navigate()} }>NAVIGATE!</button> */}
+        <div className='container'>
+          <Route exact path="/" render={()=>{return <Redirect to='/rentals' />}}/>
+          <Route exact path="/rentals" component={RentalListing}/>
+          <Route exact path="/rentals/:id" component={RentalDetail}/>
+        </div>
       </div>
+      </BrowserRouter>
+      </Provider>
     );
   }
 }
