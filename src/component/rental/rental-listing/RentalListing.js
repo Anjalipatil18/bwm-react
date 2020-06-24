@@ -14,18 +14,18 @@ class RentalListing extends React.Component{
         return(
             <section id='rentalListing'>
             <h1 className='page-title'>Your Home All Around the World</h1>
-            <div className="row">
             <RentalList rentals=  {this.props.rentals}/>
-           </div>
           </section>
         )
     }
 }
 
 function mapStateToProps(state){
+    // console.log(state.props.rentals)
+
     return{
-        rentals:state.rentals.data
+        rentals: state.rentals.data
     }
 }
 
-export default connect(mapStateToProps)(RentalListing)
+export default connect(mapStateToProps)(RentalListing);
