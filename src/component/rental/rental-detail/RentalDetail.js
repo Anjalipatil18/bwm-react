@@ -27,7 +27,6 @@ export class RentalDetail extends React.Component{
                             </div>
                             <div className='col-md-6'>
                                 <RentalMap location={`${rental.city} ${rental.street}`}/>
-                                                    
                             </div>
                         </div>
                     </div>

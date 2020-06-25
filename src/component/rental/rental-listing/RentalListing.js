@@ -21,8 +21,6 @@ class RentalListing extends React.Component{
 }
 
 function mapStateToProps(state){
-    // console.log(state.props.rentals)
-
     return{
         rentals: state.rentals.data
     }

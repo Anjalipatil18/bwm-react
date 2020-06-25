@@ -19,6 +19,6 @@ export class RentalList extends React.Component{
             <div className="row">
               {this.renderRentals()}
             </div>
-        )
+        );
     }
 }

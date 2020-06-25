@@ -24,6 +24,37 @@
   .navbar .nav-item {
     color: #ededed; }
 
+.bwm-form {
+  color: #484848; }
+  .bwm-form h1 {
+    font-weight: 700;
+    margin-bottom: 30px; }
+  .bwm-form .image-container {
+    position: relative; }
+    .bwm-form .image-container img {
+      width: 100%;
+      border-radius: 5px; }
+  .bwm-form label {
+    font-size: 12px; }
+  .bwm-form .form-text {
+    font-size: 13px; }
+  .bwm-form .catchphrase {
+    text-align: center;
+    font-size: 42px;
+    position: absolute;
+    color: #f1f1f1;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+    letter-spacing: 1px; }
+  .bwm-form .btn-form {
+    margin-top: 15px; }
+
+.bwm-res-errors {
+  margin: 10px 0; }
+  .bwm-res-errors p {
+    margin-bottom: 5px; }
+
 #rentalListing {
   /* SINGLE CARD STYLES*/ }
   #rentalListing .title {
@@ -56,44 +87,43 @@
   #rentalDetails .upper-section img {
     width: 100%; }
 
-#rentalDetails .details-section .rental-type {
-  font-size: 14px;
-  font-weight: 300;
-  text-transform: uppercase;
-  margin: 0; }
+#rentalDetails .details-section {
+  color: #484848; }
+  #rentalDetails .details-section .rental-type {
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0; }
+  #rentalDetails .details-section .rental-title {
+    margin-bottom: 5px;
+    font-size: 32px;
+    font-weight: 700; }
+  #rentalDetails .details-section .rental-city {
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 20px; }
+  #rentalDetails .details-section .rental-room-info {
+    margin-bottom: 20px;
+    font-weight: 300;
+    font-size: 16px; }
+    #rentalDetails .details-section .rental-room-info span {
+      margin-right: 10px; }
+    #rentalDetails .details-section .rental-room-info i {
+      margin-right: 2px; }
+  #rentalDetails .details-section .rental-description {
+    font-weight: 300;
+    margin-bottom: 30px; }
+  #rentalDetails .details-section .rental-assets .title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 22px; }
+  #rentalDetails .details-section .rental-assets span {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: 300; }
 
-#rentalDetails .details-section .rental-title {
-  margin-bottom: 5px;
-  font-size: 32px;
-  font-weight: 700; }
-
-#rentalDetails .details-section .rental-city {
-  font-size: 14px;
-  font-weight: 300;
-  margin-bottom: 20px; }
-
-#rentalDetails .details-section .rental-room-info {
-  margin-bottom: 20px;
-  font-weight: 300;
-  font-size: 16px; }
-  #rentalDetails .details-section .rental-room-info span {
-    margin-right: 10px; }
-  #rentalDetails .details-section .rental-room-info i {
-    margin-right: 2px; }
-
-#rentalDetails .details-section .rental-description {
-  font-weight: 300;
-  margin-bottom: 30px; }
-
-#rentalDetails .details-section .rental-assets .title {
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: 22px; }
-
-#rentalDetails .details-section .rental-assets span {
-  display: block;
-  margin-bottom: 15px;
-  font-weight: 300; }
+.clickable:hover {
+  cursor: pointer; }
 
 .page-title {
   font-size: 30px;
@@ -108,3 +138,13 @@
 
 .condo {
   color: #d68000; }
+
+.btn-bwm {
+  background-color: #61dafb;
+  border-color: #61dafb;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px; }
+  .btn-bwm:hover, .btn-bwm:focus, .btn-bwm:active {
+    border-color: #61dafb !important;
+    background-color: #61dafb !important; }

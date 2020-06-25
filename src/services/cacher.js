@@ -16,7 +16,7 @@ export class Cacher{
         return this.getCachedValue(key);
     }
     cacheValue(key,value){
-        return this.cache[camelCase(key)]=value;
+        this.cache[camelCase(key)]=value;
     }
 
     getCachedValue(key){
