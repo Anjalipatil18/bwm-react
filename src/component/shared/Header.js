@@ -2,7 +2,7 @@ import React from 'react';
 import {Link,withRouter} from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class Header extends React.Component(){
+class Header extends React.Component{
   constructor() {
     super();
 
@@ -15,8 +15,8 @@ class Header extends React.Component(){
   }
 
     
-    renderAuthButtons() {
-        const {isAuth}=this.props.auth;
+    renderAuthButtons(isAuth) {
+        // const {isAuth}=this.props.auth;
 
         if (isAuth) {
           return <a className='nav-item nav-link clickable' onClick={this.handleLogout}>Logout</a>
@@ -31,6 +31,8 @@ class Header extends React.Component(){
       }
 
     render(){
+      const { isAuth} = this.props.auth;
+
         return(
             <nav className='navbar navbar-dark navbar-expand-lg'>
                 <div className='container'>
@@ -44,13 +46,12 @@ class Header extends React.Component(){
                     </button>
                     <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
                     <div className='navbar-nav ml-auto'>
-                    {this.renderAuthButtons()}
+                    {this.renderAuthButtons(isAuth)}
                     </div>
                     </div>
                 </div>
             </nav>
-        
-            )
+        )
     }
    
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import RegisterForm from './RegisterForm';
 import { Redirect } from 'react-router-dom';
 
-import * as actions from 'actions';
+import * as actions from '../../actions';
 
 export class Register extends React.Component {
 

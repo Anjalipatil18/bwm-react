@@ -5,6 +5,8 @@ import {rentalType} from '../../../helpers';
 
 export  function RentalCard(props){
     const rental = props.rental;
+    console.log(rental.image);
+
 
     return(
         <div className={props.colNum}>
