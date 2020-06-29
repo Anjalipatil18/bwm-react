@@ -11,7 +11,7 @@ const bookingRoutes=require('./routes/bookings');
 
 mongoose.connect('mongodb://localhost:27017/bwm-react-dev').then(()=>{
     const fakeDb = new FakeDb();
-    // fakeDb.seeDb()
+    fakeDb.seeDb()
 })
 
 const app = express();

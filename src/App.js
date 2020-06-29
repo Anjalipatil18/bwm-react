@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import {BrowserRouter,Route,Redirect} from 'react-router-dom';
+import {BrowserRouter,Route,Redirect,Switch} from 'react-router-dom';
 
 
 import {Provider} from 'react-redux';
 
 import Header from './component/shared/Header';
 import RentalListing from './component/rental/rental-listing/RentalListing';
-import RentalDetail from './component/rental/rental-detail/RentalDetail'
+import RentalDetail from './component/rental/rental-detail/RentalDetail';
+import {RentalCreate} from './component/rental/rental-create/RentalCreate';
+import RentalSearchListing from './component/rental/rental-listing/RentalSearchListing'
 import Login from  './component/login/Login'
 import {Register} from  './component/register/Register'
 
@@ -39,11 +41,15 @@ class App extends Component {
       <div className="App">
         <Header logout={this.logout} />
         <div className='container'>
-          <Route exact path="/" render={()=>{return <Redirect to='/rentals' />}}/>
-          <Route exact path="/rentals" component={RentalListing}/>
-          <ProtectedRoute exact path="/rentals/:id" component={RentalDetail}/>
-          <Route exact path="/login" component={Login}/>
-          <LoggedInRoute exact path="/register" component={Register}/>
+          <Switch>
+              <Route exact path="/" render={()=>{return <Redirect to='/rentals' />}}/>
+              <Route exact path="/rentals" component={RentalListing}/>
+              <Route exact path="/rentals/:city/homes" component={RentalSearchListing}/>
+              <ProtectedRoute exact path="/rentals/new" component={RentalCreate}/>
+              <ProtectedRoute exact path="/rentals/:id" component={RentalDetail}/>
+              <Route exact path="/login" component={Login}/>
+              <LoggedInRoute exact path="/register" component={Register}/>
+          </Switch>
 
         </div>
       </div>
