@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactCrop, { makeAspectCrop } from 'react-image-crop';
+// import ReactCrop, { makeAspectCrop } from 'react-image-crop';
 import { toast } from 'react-toastify';
 import * as actions from 'actions';
 
@@ -76,14 +76,14 @@ export class BwmFileUpload extends React.Component {
       return;
     }
 
-    this.setState({
-      crop: makeAspectCrop({
-        x: 10,
-        y: 10,
-        aspect: 4 / 3,
-        width: 50,
-      }, image.width / image.height),
-    });
+    // this.setState({
+    //   crop: makeAspectCrop({
+    //     x: 10,
+    //     y: 10,
+    //     aspect: 4 / 3,
+    //     width: 50,
+    //   }, image.width / image.height),
+    // });
   }
 
   async onCropCompleted(crop, pixelCrop) {
@@ -104,25 +104,25 @@ export class BwmFileUpload extends React.Component {
     this.setState({pending: false, status: 'FAIL'});
   }
 
-  onSuccess(uploadedImage) {
-    const {onChange} = this.props.input || this.props;
+  // onSuccess(uploadedImage) {
+  //   const {onChange} = this.props.input || this.props;
 
-    this.resetToDefaultState('OK');
+  //   this.resetToDefaultState('OK');
 
-    onChange(uploadedImage);
-  }
+  //   onChange(uploadedImage);
+  // }
 
-  uploadImage() {
-    const { croppedImage } = this.state;
+  // uploadImage() {
+  //   const { croppedImage } = this.state;
 
-    if (croppedImage) {
+  //   if (croppedImage) {
 
-      this.setState({pending: true, status: 'INIT'});
-      actions.uploadImage(croppedImage).then(
-        (uploadedImage) => { this.onSuccess(uploadedImage) },
-        (error) => { this.onError(error)})
-    }
-  }
+  //     this.setState({pending: true, status: 'INIT'});
+  //     actions.uploadImage(croppedImage).then(
+  //       (uploadedImage) => { this.onSuccess(uploadedImage) },
+  //       (error) => { this.onError(error)})
+  //   }
+  // }
 
   renderSpinningCircle() {
     const { pending } = this.state;
@@ -170,13 +170,13 @@ export class BwmFileUpload extends React.Component {
           </button>
         }
 
-        { initialImageBase64 &&
+        {/* { initialImageBase64 &&
           <ReactCrop src={initialImageBase64}
                      crop={crop}
                      onChange={(crop) => this.onCropChange(crop)}
                      onImageLoaded={(image) => this.onImageLoaded(image)}
                      onComplete={(crop, pixelCrop) => this.onCropCompleted(crop, pixelCrop)} />
-        }
+        } */}
 
         { imageBase64 &&
           <div className='img-preview-container'>

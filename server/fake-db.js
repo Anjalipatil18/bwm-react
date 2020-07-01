@@ -11,11 +11,11 @@ class FakeDb {
     this.users = fakeDbData.users;
   }
 
-//   async cleanDb() {
-//     await User.remove({});
-//     await Rental.remove({});
-//     await Booking.remove({});
-//   }
+  async cleanDb() {
+    await User.remove({});
+    await Rental.remove({});
+    await Booking.remove({});
+  }
 
   pushDataToDb() {
     const user = new User(this.users[0]);
@@ -35,7 +35,7 @@ class FakeDb {
 
   async seedDb() {
     await this.cleanDb();
-    await this.pushDataToDb();
+    this.pushDataToDb();
   }
 }
 

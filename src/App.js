@@ -12,6 +12,8 @@ import RentalSearchListing from './component/rental/rental-listing/RentalSearchL
 import Login from  './component/login/Login'
 import {Register} from  './component/register/Register'
 
+import {RentalManage} from './component/rental/rental-manage/RentalManage';
+import BookingManage from './component/booking/booking-manage/BookingManage';
 import {ProtectedRoute} from './component/shared/auth/ProtectedRoute';
 import {LoggedInRoute} from './component/shared/auth/LoggedInRoute'
 import * as actions from './actions';
@@ -45,8 +47,10 @@ class App extends Component {
               <Route exact path="/" render={()=>{return <Redirect to='/rentals' />}}/>
               <Route exact path="/rentals" component={RentalListing}/>
               <Route exact path="/rentals/:city/homes" component={RentalSearchListing}/>
+              <ProtectedRoute exact path="/rentals/manage" component={RentalManage}/>
+              <ProtectedRoute exact path="/bookings/manage" component={BookingManage}/>
               <ProtectedRoute exact path="/rentals/new" component={RentalCreate}/>
-              <ProtectedRoute exact path="/rentals/:id" component={RentalDetail}/>
+              <Route exact path="/rentals/:id" component={RentalDetail}/>
               <Route exact path="/login" component={Login}/>
               <LoggedInRoute exact path="/register" component={Register}/>
           </Switch>
